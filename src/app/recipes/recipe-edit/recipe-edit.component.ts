@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
-import { RecipeService } from '../recipe.service';
 import { Recipe } from '../../models/recipe.model';
+import { RecipesService } from '../../services/recipes.service';
 
 @Component({
   selector: 'app-recipe-edit',
@@ -17,7 +17,7 @@ export class RecipeEditComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private recipeService: RecipeService
+    private recipeService: RecipesService
   ) { }
 
   ngOnInit(): void {
@@ -40,7 +40,6 @@ export class RecipeEditComponent implements OnInit {
       recipeName = recipe.name;
       recipeImagePath = recipe.imagePath;
       recipeDescription = recipe.description;
-      
     }
     
 
