@@ -9,7 +9,7 @@ import { Subject } from "rxjs";
 })
 export class RecipesService implements OnInit {
   recipesChanged: Subject<Recipe[]> = new Subject<Recipe[]>();
-  private recipes: Recipe[] = [
+  /*private recipes: Recipe[] = [
     new Recipe(
       "Gajar Ka Halwa",
       "A Desert recipe",
@@ -32,7 +32,9 @@ export class RecipesService implements OnInit {
         new Ingredient("Spinach", 5)
       ]
     )
-  ];
+  ];*/
+
+  private recipes: Recipes[] = [];
 
   constructor(private shoppingListService: ShoppingListService) {}
 
@@ -42,12 +44,13 @@ export class RecipesService implements OnInit {
     return this.recipes.slice();
   }
 
-  addIngredientsToShoppingList(ingredients: Ingredient[]) {
-    this.shoppingListService.addIngredients(ingredients);
-  }
-
   getRecipe(index: number) {
     return this.recipes[index];
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 
   addRecipe(recipe: Recipe) {
@@ -63,5 +66,9 @@ export class RecipesService implements OnInit {
   deleteRecipe(index: number) {
     this.recipes.splice(index, 1);
     this.recipesChanged.next(this.recipes.slice());
+  }
+
+  addIngredientsToShoppingList(ingredients: Ingredient[]) {
+    this.shoppingListService.addIngredients(ingredients);
   }
 }
