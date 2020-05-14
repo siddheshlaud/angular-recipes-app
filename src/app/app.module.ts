@@ -18,7 +18,6 @@ import { AuthInterceptorService } from "./auth/auth-interceptor.service";
 import { AuthGuard } from "./auth/auth.guard";
 import { AlertComponent } from './alert/alert.component';
 import { PlaceholderDirective } from './placeholder.directive';
-import { ShoppingListModule } from "./shopping-list/shopping-list.module";
 
 @NgModule({
   declarations: [
@@ -33,7 +32,6 @@ import { ShoppingListModule } from "./shopping-list/shopping-list.module";
   imports: [
     BrowserModule,
     AppRoutesModule,
-    ShoppingListModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
