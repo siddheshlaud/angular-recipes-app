@@ -7,7 +7,7 @@ import { AuthGuard } from "../auth/auth.guard";
 const appRoutes: Routes = [
   { path: "", redirectTo: "/recipes", pathMatch: "full" },
   { path: "auth", component: AuthComponent },
-  { path: "recipes", loadChildren: '../recipes/recipes.module.t#RecipesModule' }
+  { path: "recipes", loadChildren: '../recipes/recipes.module#RecipesModule' }
 ];
 
 @NgModule({
