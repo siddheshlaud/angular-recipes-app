@@ -3,7 +3,6 @@ import { NgModule } from "@angular/core";
 
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { DropdownDirective } from "./directives/dropdown.directive";
 import { AppRoutesModule } from "./app-routes/app-routes.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DataStorageService } from "./services/data-storage.service";
